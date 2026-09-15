@@ -1,72 +1,166 @@
-<div align="center">
+# =====================================================================
+# AGENTE DE APRENDIZAJE AVANZADO (Q-LEARNING EN UN ENTORNO GRIDWORLD)
+# =====================================================================
+# Este agente supera el ejemplo básico al incorporar:
+# 1. Múltiples estados (un entorno de cuadrícula 4x4).
+# 2. Política Epsilon-Greedy (balance entre exploración y explotación).
+# 3. Factor de descuento (gamma) para valorar recompensas futuras.
+# 4. Bucle de entrenamiento por episodios con interacción dinámica.
+# =====================================================================
 
-  <!-- Estilos CSS integrados para el efecto de parpadeo estilo terminal hacker -->
-  <style>
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    .hacker-blink {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #00FF66;
-      text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
-      animation: blink 1s infinite;
-    }
-    .terminal-box {
-      background-color: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      padding: 20px;
-      text-align: left;
-      font-family: 'Courier New', Courier, monospace;
-      color: #c9d1d9;
-      max-width: 600px;
-      margin: 20px auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-    .cmd-green { color: #00FF66; }
-    .cmd-blue { color: #58a6ff; }
-  </style>
 
-  <!-- Nombre parpadeante -->
-  <div class="hacker-blink">
-    &gt; Daniel García_
-  </div>
+class QLearningAgent:
 
-  <p>
-    <img src="https://img.shields.io/badge/STATUS-ONLINE-00ff66?style=flat-square&logo=hackthebox&logoColor=black" />
-    <img src="https://img.shields.io/badge/SECURITY-DEFENSIVE%2FOFENSIVE-blueviolet?style=flat-square&logo=linux&logoColor=white" />
-  </p>
+  def __init__(
+      self,
+      acciones,
+      alfa=0.1,
+      gamma=0.9,
+      epsilon=1.0,
+      epsilon_min=0.01,
+      epsilon_decay=0.995,
+  ):
+    self.acciones = acciones
+    self.alfa = alfa  # Tasa de aprendizaje
+    self.gamma = gamma  # Factor de descuento
+    self.epsilon = epsilon  # Tasa de exploración inicial
+    self.epsilon_min = epsilon_min
+    self.epsilon_decay = epsilon_decay
 
-  <!-- Bloque de terminal minimalista -->
-  <div class="terminal-box">
-    <span class="cmd-blue">root@daniel-garcia</span>:<span class="cmd-green">~#</span> cat profile.txt<br><br>
-    Estudiante de Ingeniería en Sistemas Computacionales apasionado por la ciberseguridad, el análisis de vulnerabilidades y la protección de infraestructuras digitales.
-  </div>
+    # Tabla Q: Mapea cada par (estado, acción) a un valor numérico Q(s, a)
+    self.q_table = {}
 
-  <!-- Métricas animadas de GitHub -->
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=TU_USUARIO_GITHUB&show_icons=true&theme=vue-dark&hide_border=true&count_private=true" alt="GitHub Stats" />
-  </p>
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU_USUARIO_GITHUB&layout=compact&theme=vue-dark&hide_border=true" alt="Top Langs" />
-  </p>
+  def obtener_q(self, estado, accion):
+    # Si el estado-acción no ha sido visitado, inicializamos en 0.0
+    return self.q_table.get((estado, accion), 0.0)
 
-  <!-- Canales de contacto -->
-  <p>
-    <a href="https://linkedin.com/in/TU_USUARIO_LINKEDIN">
-      <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
-    </a>
-    <a href="mailto:TU_CORREO@example.com">
-      <img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" />
-    </a>
-  </p>
+  def elegir_accion(self, estado):
+    # Política Epsilon-Greedy: Exploración vs Explotación
+    if random.uniform(0, 1) < self.epsilon:
+      return random.choice(self.acciones)  # Exploración (acción aleatoria)
 
-  <p>
-    <img src="https://komarev.com/ghpvc/?username=TU_USUARIO_GITHUB&color=00ff66&style=flat&label=VISITAS+AL+SISTEMA" />
-  </p>
+    # Explotación (elegir la mejor acción conocida para el estado actual)
+    valores_acciones = [self.obtener_q(estado, a) for a in self.acciones]
+    max_valor = max(valores_acciones)
 
-</div>
+    # Si hay múltiples acciones con el mismo valor máximo, rompemos el empate al azar
+    mejores_acciones = [
+        a for a, v in zip(self.acciones, valores_acciones) if v == max_valor
+    ]
+    return random.choice(mejores_acciones)
+
+  def actualizar(self, estado, accion, recompensa, siguiente_estado):
+    # Obtener el valor Q actual
+    q_actual = self.obtener_q(estado, accion)
+
+    # Estimar el valor máximo futuro para el siguiente estado
+    max_q_siguiente = max(
+        [self.obtener_q(siguiente_estado, a) for a in self.acciones]
+    )
+
+    # Ecuación de actualización de Q-Learning (Bellman)
+    # Q(s,a) = Q(s,a) + alpha * [recompensa + gamma * max(Q(s',a')) - Q(s,a)]
+    error = recompensa + (self.gamma * max_q_siguiente) - q_actual
+    self.q_table[(estado, accion)] = q_actual + (self.alfa * error)
+
+  def reducir_epsilon(self):
+    if self.epsilon > self.epsilon_min:
+      self.epsilon *= self.epsilon_decay
+
+
+# =====================================================================
+# ENTORNO: GRIDWORLD (MUNDO DE CUADRÍCULA)
+# =====================================================================
+class GridWorld:
+
+  def __init__(self):
+    self.filas = 4
+    self.columnas = 4
+    self.inicio = (0, 0)
+    self.meta = (3, 3)
+    self.trampa = (1, 1)
+    self.estado_actual = self.inicio
+
+  def reiniciar(self):
+    self.estado_actual = self.inicio
+    return self.estado_actual
+
+  def paso(self, accion):
+    x, y = self.estado_actual
+
+    # Definir movimientos
+    if accion == "ARRIBA":
+      x = max(0, x - 1)
+    elif accion == "ABAJO":
+      x = min(self.filas - 1, x + 1)
+    elif accion == "IZQUIERDA":
+      y = max(0, y - 1)
+    elif accion == "DERECHA":
+      y = min(self.columnas - 1, y + 1)
+
+    self.estado_actual = (x, y)
+
+    # Calcular recompensas y condiciones de terminación
+    if self.estado_actual == self.meta:
+      return self.estado_actual, 10.0, True  # Recompensa alta por llegar a la meta
+    elif self.estado_actual == self.trampa:
+      return (
+          self.estado_actual,
+          -10.0,
+          True,
+      )  # Penalización alta por caer en trampa
+    else:
+      return (
+          self.estado_actual,
+          -0.1,
+          False,
+      )  # Pequeño costo por paso para fomentar rutas cortas
+
+
+# =====================================================================
+# ENTRENAMIENTO DEL AGENTE
+# =====================================================================
+acciones_disponibles = ["ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"]
+agente = QLearningAgent(acciones=acciones_disponibles)
+entorno = GridWorld()
+
+episodios = 500
+
+print("Iniciando entrenamiento del agente en GridWorld...")
+for episodio in range(episodios):
+  estado = entorno.reiniciar()
+  terminado = False
+
+  while not terminado:
+    accion = agente.elegir_accion(estado)
+    siguiente_estado, recompensa, terminado = entorno.paso(accion)
+
+    agente.actualizar(estado, accion, recompensa, siguiente_estado)
+    estado = siguiente_estado
+
+  agente.reducir_epsilon()
+
+print("¡Entrenamiento finalizado!\n")
+
+# =====================================================================
+# PRUEBA DEL AGENTE ENTRENADO
+# =====================================================================
+print("Probando el comportamiento del agente tras el aprendizaje:")
+estado = entorno.reiniciar()
+terminado = False
+pasos = 0
+camino = [estado]
+
+while not terminado and pasos < 20:
+  # En la fase de prueba, explotamos al máximo el conocimiento (epsilon = 0)
+  agente.epsilon = 0
+  accion = agente.elegir_accion(estado)
+  estado, _, terminado = entorno.paso(accion)
+  camino.append(estado)
+  pasos += 1
+
+print(f"Camino seguido por el agente: {camino}")
+if camino[-1] == entorno.meta:
+  print("¡El agente logró llegar a la meta con éxito!")
+else:
+  print("El agente no completó el objetivo en esta prueba.")
