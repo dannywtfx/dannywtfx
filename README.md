@@ -1,205 +1,58 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Efecto Tecnológico para Daniel García</title>
-<style>
-/* Estilos básicos para el cuerpo y contenedor */
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0d1117; /* Fondo oscuro tipo GitHub */
-    font-family: 'Roboto Mono', monospace; /* Fuente monoespaciada para aspecto tecnológico */
-    overflow: hidden; /* Evitar barras de desplazamiento si la animación sobresale */
-}
+<div align="center">
 
-/* Contenedor principal de la animación */
-.tech-glitch-container {
-    position: relative;
-    padding: 20px;
-    background: #0d1117;
-}
+<!-- BANNER ANIMADO TECNOLÓGICO -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F2FE,100:4FACFE&height=220&section=header&text=DANIEL%20GARCÍA&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Ingeniería%20en%20Sistemas%20Computacionales&descAlignY=62&descAlign=50" width="100%" />
 
-/* El texto principal de "DANIEL GARCÍA" */
-.glitch-text {
-    font-size: 6rem; /* Tamaño muy grande */
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #fff; /* Texto blanco principal */
-    letter-spacing: -2px;
-    position: relative;
-    z-index: 10;
-}
+<!-- MÁQUINA DE ESCRIBIR DINÁMICA -->
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=00F2FE&center=true&vCenter=true&width=600&height=50&lines=Estudiante+de+Ingenier%C3%ADa+en+Sistemas;Desarrollador+de+Software;Apasionado+por+la+Tecnolog%C3%ADa" alt="Typing SVG" />
+</a>
 
-/* Pseudo-elementos ::before y ::after para crear las capas de glitch y color */
-.glitch-text::before,
-.glitch-text::after {
-    content: "DANIEL GARCÍA"; /* El texto duplicado */
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.8;
-}
+<p align="center">
+  🎓 <b>Estudiante de 7.º Semestre</b><br>
+  💻 Enfocado en arquitectura de software, bases de datos y desarrollo de soluciones eficientes.
+</p>
 
-/* Capa ::before: Color cian (capa "roja" del glitch) */
-.glitch-text::before {
-    color: #0ff; /* Cian/Azul tecnológico */
-    z-index: -1;
-    animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-}
+<!-- BADGES TECH STACK -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+</p>
 
-/* Capa ::after: Color magenta (capa "azul" del glitch) */
-.glitch-text::after {
-    color: #f0f; /* Magenta */
-    z-index: -2;
-    animation: glitch-anim-2 2s infinite linear alternate-reverse;
-}
-
-/* EFECTO DE LÍNEA HORIZONTAL ESCANEANDO DETRÁS */
-.scanner-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #2da44e; /* Verde tecnológico */
-    opacity: 0.7;
-    border-radius: 2px;
-    z-index: 5;
-    transform: translateY(-100%);
-    animation: scan-move 4s linear infinite;
-    filter: blur(1px);
-}
-
-/* KEYFRAMES PARA LA PRIMERA CAPA DE GLITCH (Cian) */
-@keyframes glitch-anim-1 {
-    0% {
-        clip: rect(30px, 9999px, 10px, 0);
-        transform: translate(-3px, -2px);
-    }
-    10% {
-        clip: rect(2px, 9999px, 45px, 0);
-        transform: translate(2px, 2px);
-    }
-    20% {
-        clip: rect(98px, 9999px, 81px, 0);
-        transform: translate(-1px, 1px);
-    }
-    30% {
-        clip: rect(65px, 9999px, 91px, 0);
-        transform: translate(3px, -3px);
-    }
-    40% {
-        clip: rect(81px, 9999px, 49px, 0);
-        transform: translate(0px, 0px);
-    }
-    50% {
-        clip: rect(2px, 9999px, 66px, 0);
-        transform: translate(-1px, -1px);
-    }
-    60% {
-        clip: rect(110px, 9999px, 30px, 0);
-        transform: translate(2px, 3px);
-    }
-    70% {
-        clip: rect(9px, 9999px, 75px, 0);
-        transform: translate(-2px, -2px);
-    }
-    80% {
-        clip: rect(44px, 9999px, 98px, 0);
-        transform: translate(1px, -3px);
-    }
-    90% {
-        clip: rect(101px, 9999px, 4px, 0);
-        transform: translate(3px, 1px);
-    }
-    100% {
-        clip: rect(12px, 9999px, 50px, 0);
-        transform: translate(0px, 0px);
-    }
-}
-
-/* KEYFRAMES PARA LA SEGUNDA CAPA DE GLITCH (Magenta) */
-@keyframes glitch-anim-2 {
-    0% {
-        clip: rect(76px, 9999px, 11px, 0);
-        transform: translate(2px, -1px);
-    }
-    10% {
-        clip: rect(40px, 9999px, 63px, 0);
-        transform: translate(-1px, 3px);
-    }
-    20% {
-        clip: rect(109px, 9999px, 20px, 0);
-        transform: translate(3px, -2px);
-    }
-    30% {
-        clip: rect(12px, 9999px, 110px, 0);
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        clip: rect(61px, 9999px, 98px, 0);
-        transform: translate(0px, -3px);
-    }
-    50% {
-        clip: rect(90px, 9999px, 1px, 0);
-        transform: translate(1px, -1px);
-    }
-    60% {
-        clip: rect(10px, 9999px, 76px, 0);
-        transform: translate(-3px, 3px);
-    }
-    70% {
-        clip: rect(3px, 9999px, 80px, 0);
-        transform: translate(2px, 0px);
-    }
-    80% {
-        clip: rect(88px, 9999px, 100px, 0);
-        transform: translate(-1px, -2px);
-    }
-    90% {
-        clip: rect(44px, 9999px, 2px, 0);
-        transform: translate(3px, 2px);
-    }
-    100% {
-        clip: rect(70px, 9999px, 55px, 0);
-        transform: translate(0px, 0px);
-    }
-}
-
-/* KEYFRAMES PARA EL MOVIMIENTO DE LA LÍNEA DE ESCANEO */
-@keyframes scan-move {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    10% {
-        transform: translateY(0%);
-        opacity: 0.7;
-    }
-    90% {
-        transform: translateY(100vh); /* Mover fuera de la vista hacia abajo */
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
-</style>
-</head>
-<body>
-
-<div class="tech-glitch-container">
-    <div class="glitch-text">Daniel García</div>
-    <div class="scanner-line"></div>
 </div>
 
-</body>
-</htm
+---
+
+### 📌 Sobre mí
+
+- 🔭 **Enfoque actual:** Construcción de proyectos de software y sistemas computacionales.
+- 🎓 **Formación:** Cursando el 7.º semestre de la carrera de Ingeniería en Sistemas Computacionales.
+- 💼 **Objetivo:** Orientado al desarrollo profesional y aplicación de buenas prácticas en entornos reales.
+- ⚡ **Intereses:** Automatización, Inteligencia Artificial y optimización de procesos.
+
+---
+
+<div align="center">
+
+### 📬 Conéctate conmigo
+
+<a href="https://linkedin.com/in/tu-usuario" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="mailto:tu-correo@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+
+<br><br>
+
+### 📊 Estadísticas de GitHub
+
+![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=TU-USUARIO-GITHUB&show_icons=true&theme=tokyonight)
+![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=TU-USUARIO-GITHUB&layout=compact&theme=tokyonight)
+
+</div>
+
