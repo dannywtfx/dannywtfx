@@ -1,17 +1,17 @@
 <div align="center">
 
-<!-- ENCABEZADO CON CSS INLINE Y SOMBRAS -->
-<h1 style="color: #2da44e; border-bottom: 2px solid #2da44e; padding-bottom: 10px; font-family: sans-serif;">
-  ¡Hola! Soy Daniel García 👋
-</h1>
+<!-- ENCABEZADO ANIMADO (Efecto Máquina de Escribir) -->
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=2DA44E&center=true&vCenter=true&width=500&lines=%C2%A1Hola!+Soy+Daniel+Garc%C3%ADa;Estudiante+de+Ingenier%C3%ADa+en+Sistemas;Desarrollador+de+Software;Bienvenido+a+mi+perfil+👋" alt="Typing SVG" />
+</a>
 
-<p style="font-size: 16px; color: #57606a; font-weight: 500;">
-  🎓 <b>Estudiante de Ingeniería en Sistemas Computacionales</b> (7.º Semestre)<br>
-  💻 Apasionado por el desarrollo de software, arquitectura de sistemas y automatización.
+<p align="center">
+  🎓 <b>Ingeniería en Sistemas Computacionales</b> (7.º Semestre)<br>
+  💻 Apasionado por la arquitectura de software, IA y automatización.
 </p>
 
-<!-- BADGES TECH STACK CON CSS STYLING -->
-<p>
+<!-- BADGES TECH STACK CON EFECTO WAVE / SHIELDS -->
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
@@ -22,46 +22,36 @@
 
 </div>
 
-<hr style="border: 1px solid #30363d; margin: 20px 0;">
+---
 
-<!-- SECCIÓN SOBRE MÍ CON TARJETA ESTILIZADA EN HTML/CSS -->
-<h3 style="color: #0969da;">📌 Sobre mí</h3>
+### 📌 Sobre mí
 
-<table width="100%" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td style="padding: 15px; background-color: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de;">
-      <ul>
-        <li>🔭 <b>Enfoque actual:</b> Desarrollando proyectos académicos y personales en ingeniería de software.</li>
-        <li>🎓 <b>Formación:</b> Cursando materias avanzadas de la carrera de ISC.</li>
-        <li>💼 <b>Objetivo:</b> En búsqueda de oportunidades para aplicar mis conocimientos en entornos profesionales.</li>
-        <li>⚡ <b>Dato curioso:</b> Me apasiona explorar herramientas de IA para optimización y automatización de código.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+- 🔭 **Enfoque actual:** Desarrollo de proyectos académicos y sistemas de software.
+- 🎓 **Educación:** 7.º semestre de la carrera de Ingeniería en Sistemas Computacionales.
+- 💼 **Objetivo:** En búsqueda de oportunidades profesionales en desarrollo y tecnología.
+- ⚡ **Intereses:** Exploración de IA, optimización de algoritmos y automatización.
 
-<br>
+---
 
-<!-- SECCIÓN DE CONTACTO CON BOTONES HTML/CSS -->
+<!-- ONDA ANIMADA DE SEPARACIÓN -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=2da44e&height=100&section=footer" width="100%"/>
+
 <div align="center">
-  <h3 style="color: #0969da;">📬 Conéctate conmigo</h3>
 
-  <a href="https://linkedin.com/in/tu-usuario" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:tu-correo@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</div>
+### 📬 Conéctate conmigo
 
-<br>
+<a href="https://linkedin.com/in/tu-usuario" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="mailto:tu-correo@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
 
-<hr style="border: 1px solid #30363d; margin: 20px 0;">
+<br><br>
 
-<!-- ESTADÍSTICAS -->
-<div align="center">
-  <h3 style="color: #0969da;">📊 Estadísticas de GitHub</h3>
-  
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=TU-USUARIO-GITHUB&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU-USUARIO-GITHUB&layout=compact&theme=tokyonight"/>
+### 📊 Estadísticas
+
+![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=TU-USUARIO-GITHUB&show_icons=true&theme=tokyonight)
+![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=TU-USUARIO-GITHUB&layout=compact&theme=tokyonight)
+
 </div>
