@@ -1,11 +1,11 @@
 <div align="center">
 
 <!-- BANNER ANIMADO TECNOLÓGICO -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F2FE,100:4FACFE&height=220&section=header&text=DANIEL%20GARCÍA&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Ingeniería%20en%20Sistemas%20Computacionales&descAlignY=62&descAlign=50" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F2FE,100:4FACFE&height=220&section=header&text=DANIEL%20GARCÍA&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Ingeniería%20en%20Sistemas%20&descAlignY=62&descAlign=50" width="100%" />
 
 <!-- MÁQUINA DE ESCRIBIR DINÁMICA -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=00F2FE&center=true&vCenter=true&width=600&height=50&lines=Estudiante+de+Ingenier%C3%ADa+en+Sistemas;Desarrollador+de+Software;Apasionado+por+la+Tecnolog%C3%ADa" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=00F2FE&center=true&vCenter=true&width=600&height=50&lines=Estudiante+de+Ingenier%C3%ADa+en+Sistemas;Apasionado+por+la+Tecnolog%C3%ADa" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -38,14 +38,6 @@
 
 <div align="center">
 
-### 📬 Conéctate conmigo
-
-<a href="https://linkedin.com/in/tu-usuario" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-<a href="mailto:tu-correo@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-</a>
 
 <br><br>
 
