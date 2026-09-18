@@ -10,7 +10,7 @@
 
 <p align="center">
   🎓 <b>Estudiante de 7.º Semestre</b><br>
-  💻 Enfocado en arquitectura de software, bases de datos y desarrollo de soluciones eficientes.
+  💻 Enfocado en ciberseguridad, purple team y desarrollo de soluciones eficientes.
 </p>
 
 <!-- BADGES TECH STACK -->
@@ -32,7 +32,7 @@
 - 🔭 **Enfoque actual:** Construcción de proyectos de software y sistemas computacionales.
 - 🎓 **Formación:** Cursando el 7.º semestre de la carrera de Ingeniería en Sistemas Computacionales.
 - 💼 **Objetivo:** Orientado al desarrollo profesional y aplicación de buenas prácticas en entornos reales.
-- ⚡ **Intereses:** Automatización, Inteligencia Artificial y optimización de procesos.
+- ⚡ **Intereses:** Ciberseguridad, Inteligencia Artificial y optimización de procesos.
 
 ---
 
